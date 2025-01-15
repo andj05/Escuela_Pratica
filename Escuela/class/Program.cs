@@ -8,43 +8,44 @@ namespace EscuelaApp
         {
             Console.WriteLine("=== Bienvenido al Sistema de Gestión Escolar ===\n");
 
-            // Crear la escuela
+            // Crear la escuela (Aquí es donde comienza todo)
             var escuela = new Escuela("Escuela Las Yayas");
 
-            // Crear clases
+            // Crear las clases (Por ejemplo, 4to de básica, 5to de primaria, etc.)
             var clase1 = new Clase("4B");
             var clase2 = new Clase("5A");
 
-            // Crear estudiantes con nombre y matrícula
+            // Agregar estudiantes (Nombre y su matrícula única)
             var estudiante1 = new Estudiante("Anddy Jara", "20240148");
             var estudiante2 = new Estudiante("Sandra Ramírez", "20240199");
 
-            // Crear profesores
+            // Crear los profesores (Aquí van los maestros de las clases)
             var profesor1 = new Profesor("Samuel Lorenzo");
             var profesor2 = new Profesor("Ramona Ledesma");
 
-            // Crear cursos o materias
-            var curso1 = new Curso("Matemáticas", 20, 50);
-            var curso2 = new Curso("Lengua Española", 15, 40);
+            // Crear los cursos o materias (Por ejemplo, Matemáticas y Lengua Española)
+            var curso1 = new Curso("Matemáticas", 20, 50); // 20 clases, 50 ejercicios
+            var curso2 = new Curso("Lengua Española", 15, 40); // 15 clases, 40 ejercicios
 
-            // Asignar cursos a profesores
-            profesor1.AgregarCurso(curso2);
-            profesor2.AgregarCurso(curso1);
+            // Asignar las materias a los profesores (Cada profe enseña sus cursos)
+            profesor1.AgregarCurso(curso2); // Samuel enseña Lengua Española
+            profesor2.AgregarCurso(curso1); // Ramona enseña Matemáticas
 
             // Asignar estudiantes y profesores a las clases
-            clase1.AgregarEstudiante(estudiante1);
-            clase1.AgregarProfesor(profesor1);
+            // En esta parte decimos quién va para cuál clase
+            clase1.AgregarEstudiante(estudiante1); // Anddy está en 4B
+            clase1.AgregarProfesor(profesor1);    // Samuel enseña en 4B
 
-            clase2.AgregarEstudiante(estudiante2);
-            clase2.AgregarProfesor(profesor2);
+            clase2.AgregarEstudiante(estudiante2); // Sandra está en 5A
+            clase2.AgregarProfesor(profesor2);    // Ramona enseña en 5A
 
-            // Agregar las clases a la escuela
+            // Agregar las clases a la escuela (Se arman las aulas con todo el personal)
             escuela.AgregarClase(clase1);
             escuela.AgregarClase(clase2);
 
-            // Mostrar información de la escuela
+            // Mostrar la información de la escuela (Resumen de todo)
             Console.WriteLine($"Escuela: {escuela.Nombre}");
-            Console.WriteLine(new string('-', 40)); // Línea divisora
+            Console.WriteLine(new string('-', 40)); // Línea divisoria para mejor presentación
 
             foreach (var clase in escuela.Clases)
             {
